@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import dayjs from 'dayjs';
-import { Link } from 'react-router-dom';
 
 export default function Articles(props) {
     const { idx, image, url, title, summary, newsSite, publishedAt } = props;
@@ -59,9 +58,10 @@ const Article = styled.div`
     display: flex;
     justify-content: ${props => props.justifyContent};
     img {
-        width: 100px;
-        height: 100px;
-        margin-right: 20px;
+        width: 120px;
+        height: 120px;
+        margin-right: 40px;
+        margin-left: 40px;
     }
     margin-top: 70px;
     margin-bottom: 50px;

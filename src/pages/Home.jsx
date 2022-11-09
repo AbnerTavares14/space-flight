@@ -5,25 +5,70 @@ import Button from '@mui/material/Button';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import Divider from '@mui/material/Divider';
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import api from "../services/api";
 import Articles from "../components/Articles";
-import { margin } from "@mui/system";
+import { SearchContext } from '../context/SearchContext';
+import { useContext } from 'react';
 
 export default function Home() {
     const [articles, setArticles] = useState([]);
+    const [skip, setSkip] = useState([0]);
+    const array = [];
+    const { sort, clicked, setClicked, search } = useContext(SearchContext);
 
     useEffect(() => {
         async function fetchData() {
             try {
                 const { data } = await api.getArticles();
                 setArticles(data);
+                setSkip(data.length);
             } catch (error) {
                 console.log(error);
             }
         }
         fetchData();
     }, []);
+
+    async function searchTitle() {
+        try {
+            const { data } = await api.getArticleByTitle(search);
+            setArticles(data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    if (clicked) {
+        if (search === '') {
+            setClicked(false);
+        } else {
+            searchTitle();
+        }
+    }
+
+    async function getMoreArticles() {
+        try {
+            const { data } = await api.getArticlesWithSkip(skip);
+            array.push(...articles, ...data);
+            setArticles(array);
+            setSkip(skip + data.length);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async function filterSearch() {
+        try {
+            const { data } = await api.getArticlesByDate(sort);
+            setArticles(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    if (sort !== 'sort') {
+        filterSearch();
+    }
 
     return (
         <>
@@ -49,7 +94,7 @@ export default function Home() {
             <Point />
             <ContainerButton>
 
-                <Button variant="outlined" sx={{ justifyContent: 'center' }}>
+                <Button onClick={() => getMoreArticles()} variant="outlined" sx={{ justifyContent: 'center' }}>
                     Carregar Mais
                 </Button>
             </ContainerButton>
@@ -60,13 +105,16 @@ export default function Home() {
 
 const Div = styled.div`
     display: flex;
+
+    @media(max-width: 600px) {
+        
+    }
 `
 
 const Point = styled.div`
     width: 20px;
     height: 20px;
     margin: 10px auto;
-    /* margin-top: 10px; */
     background-color: #302E53;
 `
 

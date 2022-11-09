@@ -4,12 +4,14 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
+import { SearchContext } from '../context/SearchContext';
+import { useContext, useState } from 'react';
 
 export default function SelectButton() {
-    const [age, setAge] = React.useState('');
+    const { setSort, sort } = useContext(SearchContext);
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setSort(event.target.value);
     };
 
     return (
@@ -19,8 +21,8 @@ export default function SelectButton() {
                 <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
-                    value={age}
-                    label="Age"
+                    value={sort}
+                    label="Sort"
                     onChange={handleChange}
                 >
                     <MenuItem value={'asc'}>Mais antigas</MenuItem>
