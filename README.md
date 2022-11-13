@@ -1,70 +1,41 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="https://github.com/AbnerTavares14/space-flight-backend">
+    <img src="https://media.istockphoto.com/id/1300054518/vector/modern-space-helmet-with-rocket-launch-inside.jpg?s=612x612&w=0&k=20&c=EOUiDmdTVh0-GpDKqIGovvZ9jwplPCDVGIYQsuCPwD8=" alt="readme-logo" width="80" height="80">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">
+    Space Flight Challenge
+  </h3>
+</p>
 
-## Available Scripts
+**_This is a challenge by Coodesh_**
 
-In the project directory, you can run:
+### Esse é um desafio fullstack da Coodesh cujo o objetivo é fazer um back-end que utilize um script para pegar os dados da API pública da space flight e fazer um cron para esses dados serem atualizados todos os dias as 9h da manhã, além disso o desafio também requisita um front end seguindo o wireframe, cores e fontes estabelecidas e que liste 10 artigos, podendo listar mais 10 a cada vez que o usuário clicar em um botão para carregar mais. Também deve ser possível listar os artigos por ordem de data de publicação e pesquisar artigos pelo título.  [Clique aqui](https://github.com/AbnerTavares14/space-flight) para ser redirecionado para o meu repositório back-end deste desafio.
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Tecnologias usadas
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[ReactJS](https://reactjs.org)
 
-### `npm test`
+[MUI](https://mui.com/pt/material-ui/getting-started/overview/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+[Styled-Components](https://styled-components.com/docs)
 
-### `npm run build`
+[Sweet-Alert2](https://sweetalert2.github.io)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[React-Router-Dom](https://v5.reactrouter.com/web/guides/quick-start)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+[Dayjs](https://day.js.org/docs/en/installation/installation)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Axios](https://axios-http.com/ptbr/docs/intro)
 
-### `npm run eject`
+[json2mq](https://www.npmjs.com/package/json2mq)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Uso
+```bash
+$ git clone https://github.com/AbnerTavares14/space-flight
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+$ npm install
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+$ npm start
+```
