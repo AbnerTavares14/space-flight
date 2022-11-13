@@ -16,18 +16,31 @@ export default function Home() {
     const array = [];
     const { sort, clicked, setClicked, search } = useContext(SearchContext);
 
-    useEffect(() => {
-        async function fetchData() {
-            try {
-                const { data } = await api.getArticles();
-                setArticles(data);
-                setSkip(data.length);
-            } catch (error) {
-                console.log(error);
-            }
+    async function fetchData() {
+        try {
+            const { data } = await api.getArticles();
+            setArticles(data);
+            setSkip(data.length);
+        } catch (error) {
+            console.log(error);
         }
+    }
+    useEffect(() => {
         fetchData();
     }, []);
+
+    useEffect(() => {
+        if (sort !== 'sort') {
+            filterSearch();
+        } else if (search === '') {
+            fetchData();
+        }
+
+
+        if (clicked && search !== '') {
+            searchTitle();
+        }
+    }, [sort, clicked]);
 
     async function searchTitle() {
         try {
@@ -38,20 +51,27 @@ export default function Home() {
         }
     }
 
-    if (clicked) {
-        if (search === '') {
-            setClicked(false);
-        } else {
-            searchTitle();
-        }
-    }
+
 
     async function getMoreArticles() {
         try {
-            const { data } = await api.getArticlesWithSkip(skip);
-            array.push(...articles, ...data);
-            setArticles(array);
-            setSkip(skip + data.length);
+            if (sort !== 'sort') {
+                const { data } = await api.getArticlesByDateWithSkip(sort, skip);
+                array.push(...articles, ...data);
+                setArticles(array);
+                setSkip(skip + data.length);
+            } else if (search !== '') {
+                const { data } = await api.getArticlesByTitleWithSkip(search, skip);
+                array.push(...articles, ...data);
+                setArticles(array);
+                setSkip(skip + data.length);
+                setClicked(false);
+            } else {
+                const { data } = await api.getArticlesWithSkip(skip);
+                array.push(...articles, ...data);
+                setArticles(array);
+                setSkip(skip + data.length);
+            }
         } catch (error) {
             console.log(error);
         }
@@ -64,10 +84,6 @@ export default function Home() {
         } catch (error) {
             console.log(error);
         }
-    }
-
-    if (sort !== 'sort') {
-        filterSearch();
     }
 
     return (

@@ -39,11 +39,13 @@ export default function SearchBar() {
                 sx={{ p: '1px 4px', display: 'flex', alignItems: 'center', width: 200, marginLeft: 190, marginTop: 2, border: '1px solid #9F9F9F', boxSizing: 'border-box', }}
             >
                 <InputBase
+                    onChange={(e) => setSearch(e.target.value)}
+                    value={search}
                     sx={{ ml: 2, flex: 2 }}
                     placeholder="Search"
                     inputProps={{ 'aria-label': 'search' }}
                 />
-                <IconButton type="button" aria-label="search">
+                <IconButton onClick={() => setClicked(true)} type="button" aria-label="search">
                     <SearchIcon sx={{ backgroundColor: '#1E2022', color: '#FFFF', width: 30, height: 30 }} />
                 </IconButton>
             </Paper>

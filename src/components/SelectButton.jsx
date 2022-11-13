@@ -25,6 +25,7 @@ export default function SelectButton() {
                     label="Sort"
                     onChange={handleChange}
                 >
+                    <MenuItem value={'sort'}>Sort</MenuItem>
                     <MenuItem value={'asc'}>Mais antigas</MenuItem>
                     <MenuItem value={'desc'}>Mais novas</MenuItem>
                 </Select>
