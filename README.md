@@ -10,7 +10,7 @@
 
 **_This is a challenge by Coodesh_**
 
-### Esse é um desafio fullstack da Coodesh cujo o objetivo é fazer um back-end que utilize um script para pegar os dados da API pública da space flight e fazer um cron para esses dados serem atualizados todos os dias as 9h da manhã, além disso o desafio também requisita um front end seguindo o wireframe, cores e fontes estabelecidas e que liste 10 artigos, podendo listar mais 10 a cada vez que o usuário clicar em um botão para carregar mais. Também deve ser possível listar os artigos por ordem de data de publicação e pesquisar artigos pelo título.  [Clique aqui](https://github.com/AbnerTavares14/space-flight) para ser redirecionado para o meu repositório back-end deste desafio.
+### Esse é um desafio fullstack da Coodesh cujo o objetivo é fazer um back-end que utilize um script para pegar os dados da API pública da space flight e fazer um cron para esses dados serem atualizados todos os dias as 9h da manhã, além disso o desafio também requisita um front end seguindo o wireframe, cores e fontes estabelecidas e que liste 10 artigos, podendo listar mais 10 a cada vez que o usuário clicar em um botão para carregar mais. Também deve ser possível listar os artigos por ordem de data de publicação e pesquisar artigos pelo título.  [Clique aqui](https://github.com/AbnerTavares14/space-flight-backend) para ser redirecionado para o meu repositório back-end deste desafio.
 
 
 # Tecnologias usadas
